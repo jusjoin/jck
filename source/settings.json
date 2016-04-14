@@ -1,0 +1,195 @@
+{
+  "name": "Nova",
+  "version": "1.1.5",
+  "images": [
+    {
+      "variable": "image",
+      "label": "Header image",
+	  "default": "/images/Banner.jpeg",
+      "description": "Transparent background recommended"
+    },
+    {
+      "variable": "background_image",
+      "label": "Background Image",
+      "description": "Adds a repeating background image"
+    }
+  ],
+  "image_sets": [
+    {
+      "variable": "slideshow",
+      "label": "Slideshow",
+      "description": "Replaces products on Home page"
+    }
+  ],
+  "fonts": [
+    {
+      "variable": "header_font",
+      "label": "Header Font",
+      "default": "Inconsolata"
+    },
+    {
+      "variable": "text_font",
+      "label": "Text Font",
+      "default": "Inconsolata"
+    }
+  ],
+  "colors": [
+    {
+      "variable": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "variable": "background_secondary_color",
+      "label": "Background Accent",
+      "default": "#ececec"
+    },    
+    {
+      "variable": "text_color",
+      "label": "Text",
+      "default": "#1f1f1f"
+    },
+    {
+      "variable": "text_secondary_color",
+      "label": "Text Accent",
+      "default": "#888888"
+    },    
+    {
+      "variable": "link_color",
+      "label": "Links",
+      "default": "#1201ff"
+    },
+    {
+      "variable": "link_hover",
+      "label": "Link Hover",
+      "default": "#0b019b"
+    },        
+    {
+      "variable": "border_color",
+      "label": "Borders",
+      "default": "#c0c0c0"
+    },
+    {
+      "variable": "error_color",
+      "label": "Errors",
+      "default": "#e36aa6"
+    }                 
+  ],
+  "checkout": {
+    "header_image": "{{ image }}",
+    "title_color": "{{ text_color }}",
+    "title_background_color": "{{ background_color }}",
+    "title_font": "{{ header_font }}",
+    "background_color": "{{ background_color }}",
+    "background_image": "{{ background_image }}",
+    "body_font": "{{ text_font }}",
+    "step_border_color":"{{ border_color }}",
+    "step_header_color":"{{ text_color }}",
+    "step_inactive_header_color":" {{ text_secondary_color }}",
+    "step_header_font":"{{ header_font }}",
+    "content_color":"{{ text_font }}",
+    "content_border_color":"{{ border_color }}", 
+    "input_focus_color": "#000000",
+    "input_focus_background_color": "#ffffff",
+    "input_focus_border_color": "#bfbfbf",
+    "input_error_border_color": "#ea4859",
+    "input_color": "#000000",
+    "input_error_color": "#000000",
+    "input_border_color": "#bfbfbf",
+    "input_background_color": "#ffffff",
+    "input_error_background_color": "#ffffff",
+    "input_border_radius":"0px",
+    "input_font":"{{ text_font }}",
+    "button_color":"{{ text_secondary_color }}",
+    "button_border_width":"1px",
+    "button_border_radius":"0px",
+    "button_hover_color":"{{ link_hover }}",
+    "button_background_color":"transparent",
+    "button_hover_background_color":"transparent",
+    "button_border_color":"{{ border_color }}",
+    "button_hover_border_color":"{{ link_hover }}",
+    "link_color":"{{ link_color }}",
+    "link_hover_color":"{{ link_hover }}",
+    "summary_item_border_color":"{{ border_color }}"
+  },
+  "options": [
+    {
+      "variable": "welcome_text",
+      "label": "Welcome text",
+      "type": "text",
+      "description": "Welcome text on the Home page"
+    },  
+    {
+      "variable": "featured_products",
+      "label": "Featured products",
+      "type": "select",
+      "options": "1..100",
+      "default": 3,
+      "description": "The number of products shown on the Home page"
+    },
+    {
+      "variable": "featured_order",
+      "label": "Featured products order",
+      "type": "select",
+      "options": "product_orders",
+      "default": "newest",
+      "description": "The order of products on the Home page"
+    },
+    {
+      "variable": "products_per_page",
+      "label": "Products per page",
+      "type": "select",
+      "options": "1..100",
+      "default": 8,
+      "description": "The number of products shown at a time on the Products page"
+    },
+		{
+      "variable": "product_list_layout",
+      "label": "Product List Layout",
+      "type": "select",
+      "options": [["Stacked", "stacked"], ["Grid", "masonry"]],
+      "default": "stacked",
+      "description": "The arrangement of your products on the Products pages"
+    },    
+    {
+      "variable": "show_inventory_bars",
+      "label": "Show inventory bars",
+      "type": "boolean",
+      "default": true,
+      "description": "Shows a product's inventory amounts (when using inventory tracking)",
+      "requires": "inventory"
+    },
+    {
+      "variable": "show_search",
+      "label": "Show search",
+      "type": "boolean",
+      "default": false,
+      "description": "Shows the product search area"
+    },
+  	{
+      "variable": "share_buttons",
+      "label": "Show social buttons",
+      "type": "boolean",
+      "default": true,
+      "description": "Adds Facebook, Twitter, and Pinterest buttons to Product pages"
+    },
+    {
+      "variable": "twitter_link",
+      "label": "Twitter Link",
+      "type": "text",
+      "description": "Ex: http://twitter.com/bigcartel"
+    },
+    {
+      "variable": "facebook_link",
+      "label": "Facebook Link",
+      "type": "text",
+      "description": "Ex: http://facebook.com/bigcartel"
+    },
+    {
+      "variable": "tumblr_link",
+      "label": "Tumblr Link",
+      "type": "text",
+      "description": "Ex: http://tumblr.com/bigcartel"
+    }    
+  ]
+}

@@ -1,0 +1,75 @@
+{% paginate products from products.current by theme.products_per_page %}
+
+{% if page.name == 'Products'%}<h1>All Products</h1>{% else %}{{page.name}}{% endif %}
+
+	
+{% if products != blank %}
+{% if theme.product_list_layout == "stacked" %}
+<section id="products">
+  {% for product in products %}
+  <article id="product_{{ product.id }}" class="product {{ product.status }}">
+    <section class="product_images galy">
+    	<div class="spinner"></div>
+      <ul class="slides">
+      {% for image in product.images %}
+        <li {% if forloop.last %}class="solo"{% endif %}>
+        	<img src="{{ image | product_image_url | constrain: '1000'}}" alt="Image of {{ product.name | escape }}">
+        </li>
+      {% endfor %}
+      </ul>
+    </section>
+    <section class="product_info">
+      <section class="product_price">
+        <a href="{{ product.url }}" title="View {{ product.name }}">
+	        <h2>{{ product.name | truncate: 75 }}</h2>
+	        {% case product.status %}
+	        {% when 'active' %}
+					<h3 class="price">{% if product.on_sale %}<span class="on_sale">On sale!</span>{% endif %} {{ product.default_price | money_with_sign }}</h3>
+	        {% when 'sold-out' %}
+	    	  <h3>Sold out</h3>
+	        {% when 'coming-soon' %}
+	    	  <h3>Coming soon</h3>
+	        {% endcase %}
+        </a>
+      </section>        
+    </section>
+  </article>   
+  {% endfor %}      
+</section>
+{% else %}
+<section id="products">
+	<div id="product_list">
+	  {% for product in products %}
+	  <article id="product_{{ product.id }}" class="product">
+	    <a href="{{ product.url }}" title="View {{ product.name | escape }}">
+	      <section class="product_images">
+	        <img src="{{ product.image | product_image_url size:"large" }}" class="fade_in" alt="Image of {{ product.name | escape }}" />
+	      </section>
+	      <section class="product_price">
+          <h2>{{ product.name | truncate: 30 }}</h2>
+          {% case product.status %}
+          {% when 'active' %}
+          <h3 class="price">{{ product.default_price | money_with_sign }} {% if product.on_sale %}{% endif %}</h3>
+          {% when 'sold-out' %}
+      		<h3>Sold out</h3>
+          {% when 'coming-soon' %}
+      		<h3>Coming soon</h3>
+          {% endcase %}
+	      </section>
+	    </a>
+	  </article>   
+	  {% endfor %} 
+	</div>               
+</section>
+{% endif %}
+
+{% if paginate.previous.is_link or paginate.next.is_link %}
+<nav id="pagination">
+	<ul>{% if paginate.previous %}{% if paginate.previous.is_link %}<li id="pag_prev"><a href="{{ paginate.previous.url }}" class="button" title="Previous">Previous</a></li>{% endif %}{% endif %}{% if paginate.next %}{% if paginate.next.is_link %}<li id="pag_next"><a href="{{ paginate.next.url }}" class="button" title="Next">Next</a></li>{% endif %}{% endif %}</ul>  
+</nav>   
+{% endif %}
+
+{% else %}
+<p class="alert-noproducts message">No products found</p>
+{% endif %}
+{% endpaginate %}
