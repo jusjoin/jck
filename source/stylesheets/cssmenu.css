@@ -29,7 +29,8 @@
   display: none;
 }
 #cssmenu {
-  width: auto;
+  width: 101%;
+  margin:auto;
   border-radius: 5px;
   font-family: 'Open Sans', Helvetica, sans-serif;
   background: #B0BAC3;
