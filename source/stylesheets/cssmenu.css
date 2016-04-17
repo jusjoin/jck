@@ -28,9 +28,10 @@
   display: none;
 }
 #cssmenu {
-	width:101%;
   font-family: Montserrat, sans-serif;
   background: #333333;
+  width: 100%;
+  z-index: 1;
 }
 #cssmenu > ul > li {
   float: left;
@@ -181,9 +182,10 @@
   top: 17px;
   height: 0;
 }
-@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+@media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 768px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 768px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 768px), only screen and (min-device-pixel-ratio: 2) and (max-width: 768px), only screen and (min-resolution: 192dpi) and (max-width: 768px), only screen and (min-resolution: 2dppx) and (max-width: 768px) {
   #cssmenu {
     width: 100%;
+	margin: auto;
   }
   #cssmenu ul {
     width: 100%;
