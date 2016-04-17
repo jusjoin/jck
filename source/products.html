@@ -1,6 +1,8 @@
 {% paginate products from products.current by theme.products_per_page %}
 
-{% if page.name == 'Products'%}<h1>All Products</h1>{% else %}{{page.name}}{% endif %}
+
+<h1>{% if page.name == 'products'%}All Products{% else %}{{page.name}}{% endif %}</h1>
+
 
 	
 {% if products != blank %}

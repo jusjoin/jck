@@ -9,7 +9,7 @@
   border: 0;
   list-style: none;
   line-height: 1;
-  display: block;
+  display: inline-block;
   position: relative;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -30,7 +30,7 @@
 #cssmenu {
   font-family: Montserrat, sans-serif;
   background: #333333;
-  width: 100%;
+  width: 101%;
   z-index: 1;
 }
 #cssmenu > ul > li {
@@ -185,7 +185,7 @@
 @media all and (max-width: 768px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 768px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 768px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 768px), only screen and (min-device-pixel-ratio: 2) and (max-width: 768px), only screen and (min-resolution: 192dpi) and (max-width: 768px), only screen and (min-resolution: 2dppx) and (max-width: 768px) {
   #cssmenu {
     width: 100%;
-	margin: auto;
+	margin: 3%;
   }
   #cssmenu ul {
     width: 100%;

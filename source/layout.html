@@ -88,33 +88,26 @@
     {% endfor %}
     </ul></nav>-->
 	
-	<nav class='cssmenu' id='cssmenu'>
+	<div class='cssmenu' id='cssmenu'>
 	<ul>{% if categories.active != blank %}
 		{% if artists.active != blank %}<li class="cat_header">Products</li>{% endif %}
 		<li class="{% if page.name == 'Products' %}selected{% endif %}"><a href="/products" title="Shop all products">Products</a>
-			<ul>
-               </li>{% for category in categories.active %}<li class="page {% if page.full_url contains category.url %}selected{% endif %}">{{ category | link_to }}</li>{% endfor %}
+			
+               </li>{% for category in categories.active %}<li class="page {% if page.full_url contains category.url %}selected{% endif %}">{{ category | link_to }} <img class="menu_icon" src='/images/{{category.name}}.png' alt='Cart'></li>{% endfor %}
 				{% endif %}
 				{% if artists.active != blank %}
 				{% if categories.active != blank %}<li class="cat_header">Artists</li>{% endif %}
 				<li class="{% if page.name == 'Products' %}selected{% endif %}"><a href="/products" title="Shop all Artists">All</a></li>{% for artist in artists.active %}<li class="page {% if page.full_url contains artist.url %}selected{% endif %}">{{ artist | link_to }}</li>{% endfor %}    
 				{% endif %}
-            </ul>
+            
 		</li>{% for page in pages.all limit: 3 %}
 	<li>{{ page | link_to }}</li>{% endfor %}<li><a href="/contact" title="Contact Us">Contact</a></li></ul>      
-	</nav>
-	
-	<script>
-		$( function()
-		{
-			$( '#div li:has(ul)' ).doubleTapToGo();
-		});
-	</script>
+	</div>
 	
 	{% if theme.image != blank %}
     <div class="themeBorder" id="theme_image">
       <!--<img src="{{ theme.image.url }}" alt="{{ store.name }}" />-->
-	  <img src="./images/Banner.jpeg" alt="{{ store.name }}" />
+	  <img src="../images/Banner.jpeg" alt="{{ store.name }}" />
     </div>
     {% endif %}
 	
